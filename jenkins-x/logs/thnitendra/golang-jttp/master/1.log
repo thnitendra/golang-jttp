@@ -1,0 +1,162 @@
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-hpktk[0m
+{"level":"warn","ts":1585792175.6308508,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585792175.6313493,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-6t7fx[0m
+{"level":"warn","ts":1585792177.4020977,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1585792177.5218456,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-thnitendra-golang-jttp-master-hq66t-dhklv[0m
+{"level":"warn","ts":1585792374.5688791,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585792375.796752,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/**********/golang-jttp.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+failed to get helm version: failed to run 'helm version --short' command in directory '', output: 'Client: v2.14.3+g0e7f3b6
+Error: could not find tiller'
+old helm binary on the PATH so replacing with helm 3
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/golang-jttp main.go
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/golang-jttp"]                  
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/04/02 01:53:24 pushed blob: sha256:f59851976aa4cfdcad04a129ca15d31f99591d1d22ec574cb4d5fcb744ed35a7
+2020/04/02 01:53:24 pushed blob: sha256:c3fd986f6a69d1b977ddb630ad07945a05379bb63cc4ab7f473c992fe7ac8627
+2020/04/02 01:53:25 gcr.io/development-212921/golang-jttp:0.0.1: digest: sha256:4616fe5ba0179159680723bc5e3b65d2ee07419f0069920ea1a17f50eb67ca3c size: 428
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/golang-jttp to an unshallow repository
+Generating change log from git ref 744adfa65328db58077656de73880639e30ff9e0 => 49c8b11e96bb570c3a5692f455469396af2ea23b
+Associating user x-0 in users.jenkins.io with email nitendra.thakur@rakuten.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit a5f6774f76089b67c35469713d69568ea7147981 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for **********/golang-jttp and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/**********/golang-jttp/releases/tag/v0.0.1
+generated: /workspace/source/charts/golang-jttp/templates/release.yaml
+Created Release golang-jttp-0-0-1 resource in namespace **
+Updating PipelineActivity **********-golang-jttp-master-1 with version 0.0.1
+Updated PipelineActivities **********-golang-jttp-master-1 with release notes URL: https://github.com/**********/golang-jttp/releases/tag/v0.0.1
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file golang-jttp-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mthnitendra-golang-jttp-master-hq66t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app golang-jttp version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/**********/environment-nitest-staging/pull/1
+Added label updatebot to Pull Request https://github.com/**********/environment-nitest-staging/pull/1
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/**********/environment-nitest-staging/pull/1 ref 8382b2c3cc18001634adbaf247bd69772a194cd7 Could not find a status for repository **********/environment-nitest-staging with ref 8382b2c3cc18001634adbaf247bd69772a194cd7
+Pull Request https://github.com/**********/environment-nitest-staging/pull/1 is merged at sha 9ff15a1f445e73bc346906d5a98ac959615b545e
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names golang-jttp, **-golang-jttp, **-staging-golang-jttp
